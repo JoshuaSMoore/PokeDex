@@ -4,7 +4,7 @@ import { pokePushService } from "../Services/PokePushService.js";
 
 function _drawPokeDeck(){
 let template = ''
-ProxyState.pushPoke.forEach(p => template += p.Template)
+ProxyState.pushPoke.forEach(c => template += c.Template)
 document.getElementById('sandbox-poke').innerHTML = template
   
 

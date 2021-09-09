@@ -23,7 +23,7 @@ class PokePushService {
 
   async getPoke(){
     let res = await sandboxApi.get('${ProxyState.user}/pokemon')
-    console.log('log the res!', res)
+    console.log('log the res!', res.data[0])
     ProxyState.pushPoke = res.data.map(p => new PushPoke(p))
   }
 }
