@@ -18,8 +18,8 @@ class PokePullService {
     ProxyState.currentPoke = new PullPoke(res.data)
   }
 
-  async getPoke(){
-    let res = await PokePullApi.get()
+  async getPoke(name){
+    let res = await PokePullApi.get(name)
     console.log('log the res!', res.data.results)
     ProxyState.pullPoke = res.data.results.map(p => new PokeList(p))
   }

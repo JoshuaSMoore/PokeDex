@@ -9,8 +9,8 @@ const sandboxApi = axios.create({
 
 
 class PokePushService {
-  async toggleCaught(pokeId) {
-    const poke = ProxyState.pullPoke.find(p => p.id === pokeId)
+  async toggleCaught(name) {
+    const poke = ProxyState.pullPoke.find(p => p.name === name)
     poke.caught = !poke.caught
     await sandboxApi.put('${ProxyState.user}/pokemon/${pokeId}', poke)
   }
